@@ -42,7 +42,7 @@ jobs:
       JHI_E2E_HEADLESS: true
       JHI_SCRIPTS: $HOME/generator-jhipster/test-integration/scripts
       NG_CLI_ANALYTICS: false
-    
+
     strategy:
       matrix:
         ngx-default:
@@ -86,7 +86,7 @@ jobs:
           JHI_ENTITY: micro
         react-default:
           JHI_APP: react-default
-    
+
     steps:
       - script: |
           sudo /etc/init.d/mysql stop
@@ -97,7 +97,7 @@ jobs:
       #----------------------------------------------------------------------
       - task: NodeTool@0
         inputs:
-          versionSpec: '10.16.3'
+          versionSpec: '12.13.0'
         displayName: 'TOOLS: install Node.js'
       - script: |
           if [[ $JHI_JDK = '11' ]]; then
